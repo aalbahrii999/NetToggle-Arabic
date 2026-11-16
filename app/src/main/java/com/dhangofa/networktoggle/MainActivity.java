@@ -50,6 +50,7 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
     private TargetSimUiController targetSimUiController;
     private BroadcastTabHelper broadcastTabHelper;
     private ShortcutTabHelper shortcutTabHelper;
+    private com.dhangofa.networktoggle.ui.WorkLocationUiController workLocationUiController;
     private SimResolver simResolver;
     private NetworkModeController modeController;
     private NetworkModeReader modeReader;
@@ -140,6 +141,8 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
         this.broadcastTabHelper = BroadcastTabHelper.setupTab(this, this.appPreferences);
         this.shortcutTabHelper = ShortcutTabHelper.setupTab(this, this.appPreferences);
         com.dhangofa.networktoggle.ui.GuidesTabHelper.setupTab(this);
+        this.workLocationUiController = new com.dhangofa.networktoggle.ui.WorkLocationUiController(this, this.appPreferences);
+        this.workLocationUiController.bind();
         this.updateAuthorizationUI(isExecutionAuthorized());
         this.navigationController.initialize();
         this.navigationController.setupKeyboardListener();
@@ -234,6 +237,9 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (this.permissionManager != null) {
             this.permissionManager.handleRequestPermissionsResult(requestCode, grantResults);
+        }
+        if (this.workLocationUiController != null) {
+            this.workLocationUiController.handlePermissionResult(requestCode, grantResults);
         }
     }
 

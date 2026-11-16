@@ -209,4 +209,18 @@
     <string name="widget_description">التبديل المباشر بين 4G و5G للشريحة الثانية</string>
     <string name="widget_subtitle">اختر الشبكة المفضّلة</string>
     <string name="widget_title">الشريحة الثانية</string>
+    <string name="work_location_title">موقع العمل</string>
+    <string name="work_location_desc">عند الوصول يتحول إلى 4G مفضّل، وعند المغادرة يرجع إلى 5G مفضّل. قف في العمل واحفظ الموقع ثم فعّل المفتاح.</string>
+    <string name="work_location_save">حفظ موقعي الحالي كموقع العمل</string>
+    <string name="work_location_status_off">متوقف. لن يبدّل الهاتف الشبكة من نفسه.</string>
+    <string name="work_location_status_saved">موقع العمل محفوظ. فعّل المفتاح.</string>
+    <string name="work_location_status_on">يعمل ضمن نحو 300 متر: الوصول = 4G مفضّل، المغادرة = 5G مفضّل.</string>
+    <string name="work_location_need_permission">اسمح بالموقع طوال الوقت، وإلا لن يعمل التبديل والتطبيق مغلق.</string>
+    <string name="work_location_need_fix">تعذّر قراءة موقعك. فعّل الموقع وانتظر قليلًا في مكان مكشوف ثم أعد المحاولة.</string>
+    <string name="work_location_saved_toast">تم حفظ موقع العمل</string>
+    <string name="work_location_notify_title">تبديل الشبكة</string>
+    <string name="work_location_notify_enter">وصلت إلى العمل. تم تفعيل 4G المفضّل.</string>
+    <string name="work_location_notify_exit">غادرت العمل. تم إرجاع 5G المفضّل.</string>
+    <string name="work_location_notify_fail">تعذّر تبديل الشبكة. تأكد أن Shizuku أو الروت يعمل.</string>
+    <string name="work_location_channel">موقع العمل</string>
 </resources>

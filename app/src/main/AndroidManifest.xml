@@ -10,6 +10,13 @@
     <!-- Strictly required to resolve active physical SIM slots via Android's native SubscriptionManager API -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+    <!-- Work-location routine: switch to 4G on arrival and 5G on exit, including while the app is closed. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
     <application
         android:allowBackup="false"
         android:label="@string/app_name"
@@ -85,6 +92,15 @@
             </intent-filter>
 
         </service>
+
+        <receiver
+            android:name=".location.WorkLocationReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.dhangofa.networktoggle.WORK_PROXIMITY" />
+            </intent-filter>
+        </receiver>
 
         <!-- Private provider: only launcher widget PendingIntents can trigger the toggle. -->
         <receiver

@@ -100,5 +100,7 @@
         
         <include android:id="@+id/cardTileCycle" layout="@layout/view_tile_cycle_card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" />
 
+        <include android:id="@+id/cardWorkLocation" layout="@layout/view_work_location_card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" />
+
     </LinearLayout>
 </ScrollView>

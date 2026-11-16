@@ -205,4 +205,18 @@
     <string name="status_shizuku_not_granted">Shizuku permission not granted</string>
     <string name="status_shizuku_requesting">Requesting Shizuku permission…</string>
     <string name="status_shizuku_check_failed">Shizuku check failed</string>
+    <string name="work_location_title">Work location</string>
+    <string name="work_location_desc">Arriving switches to preferred 4G. Leaving switches back to preferred 5G. Stand at work, save this spot, then turn it on.</string>
+    <string name="work_location_save">Save my current spot as work</string>
+    <string name="work_location_status_off">Off. The phone will not switch by itself.</string>
+    <string name="work_location_status_saved">Work spot saved. Turn the switch on.</string>
+    <string name="work_location_status_on">On. About 300 m around work: arrive = preferred 4G, leave = preferred 5G.</string>
+    <string name="work_location_need_permission">Allow location all the time, or the switch cannot run while the app is closed.</string>
+    <string name="work_location_need_fix">Could not read your location. Turn on location, stand outdoors for a moment, and try again.</string>
+    <string name="work_location_saved_toast">Work location saved</string>
+    <string name="work_location_notify_title">Network switch</string>
+    <string name="work_location_notify_enter">Arrived at work. Preferred 4G applied.</string>
+    <string name="work_location_notify_exit">Left work. Preferred 5G applied.</string>
+    <string name="work_location_notify_fail">Could not switch the network. Check that Shizuku or root is running.</string>
+    <string name="work_location_channel">Work location</string>
 </resources>

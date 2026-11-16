@@ -361,4 +361,60 @@ public final class AppPreferences {
     public void setPhonePermissionRequested(boolean requested) {
         preferences.edit().putBoolean("phone_permission_requested", requested).apply();
     }
+
+    private static final String KEY_WORK_ENABLED = "work_location_enabled";
+    private static final String KEY_WORK_LAT = "work_location_lat";
+    private static final String KEY_WORK_LON = "work_location_lon";
+    private static final String KEY_WORK_HAS = "work_location_has";
+    private static final String KEY_WORK_EVENT_AT = "work_location_event_at";
+    private static final String KEY_WORK_EVENT_ENTER = "work_location_event_enter";
+    private static final String KEY_WORK_EVENT_HAS = "work_location_event_has";
+
+    public boolean isWorkLocationEnabled() {
+        return preferences.getBoolean(KEY_WORK_ENABLED, false);
+    }
+
+    public void setWorkLocationEnabled(boolean enabled) {
+        preferences.edit().putBoolean(KEY_WORK_ENABLED, enabled).apply();
+    }
+
+    public boolean hasWorkLocation() {
+        return preferences.getBoolean(KEY_WORK_HAS, false);
+    }
+
+    public void setWorkLocation(double latitude, double longitude) {
+        preferences.edit()
+                .putBoolean(KEY_WORK_HAS, true)
+                .putLong(KEY_WORK_LAT, Double.doubleToRawLongBits(latitude))
+                .putLong(KEY_WORK_LON, Double.doubleToRawLongBits(longitude))
+                .apply();
+    }
+
+    public double getWorkLatitude() {
+        return Double.longBitsToDouble(preferences.getLong(KEY_WORK_LAT, 0L));
+    }
+
+    public double getWorkLongitude() {
+        return Double.longBitsToDouble(preferences.getLong(KEY_WORK_LON, 0L));
+    }
+
+    public boolean hasWorkLocationEvent() {
+        return preferences.getBoolean(KEY_WORK_EVENT_HAS, false);
+    }
+
+    public boolean wasLastWorkLocationEntering() {
+        return preferences.getBoolean(KEY_WORK_EVENT_ENTER, false);
+    }
+
+    public long getLastWorkLocationEventAt() {
+        return preferences.getLong(KEY_WORK_EVENT_AT, 0L);
+    }
+
+    public void setLastWorkLocationEvent(boolean entering, long at) {
+        preferences.edit()
+                .putBoolean(KEY_WORK_EVENT_HAS, true)
+                .putBoolean(KEY_WORK_EVENT_ENTER, entering)
+                .putLong(KEY_WORK_EVENT_AT, at)
+                .apply();
+    }
 }

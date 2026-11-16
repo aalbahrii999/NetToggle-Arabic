@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.dhangofa.networktoggle.config.AppPreferences;
+import com.dhangofa.networktoggle.location.WorkLocationController;
 
 public class BootReceiver extends BroadcastReceiver {
     @Override
@@ -23,5 +24,6 @@ public class BootReceiver extends BroadcastReceiver {
         }
 
         new AppPreferences(context).clearTransientState();
+        WorkLocationController.reregisterIfEnabled(context);
     }
 }
