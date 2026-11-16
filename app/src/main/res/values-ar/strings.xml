@@ -223,4 +223,5 @@
     <string name="work_location_notify_exit">غادرت العمل. تم إرجاع 5G المفضّل.</string>
     <string name="work_location_notify_fail">تعذّر تبديل الشبكة. تأكد أن Shizuku أو الروت يعمل.</string>
     <string name="work_location_channel">موقع العمل</string>
+    <string name="home_version_line">الإصدار %1$s</string>
 </resources>

@@ -38,6 +38,15 @@ public final class WorkLocationUiController {
         toggle = activity.findViewById(R.id.switchWorkLocation);
         status = activity.findViewById(R.id.textWorkLocationStatus);
         TextView save = activity.findViewById(R.id.btnSaveWorkLocation);
+        TextView version = activity.findViewById(R.id.textHomeVersion);
+        if (version != null) {
+            String versionName = "1.3";
+            try {
+                versionName = activity.getPackageManager().getPackageInfo(activity.getPackageName(), 0).versionName;
+            } catch (Exception ignored) {
+            }
+            version.setText(activity.getString(R.string.home_version_line, versionName));
+        }
         if (toggle == null || save == null) return;
 
         suppressToggle = true;

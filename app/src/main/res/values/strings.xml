@@ -219,4 +219,5 @@
     <string name="work_location_notify_exit">Left work. Preferred 5G applied.</string>
     <string name="work_location_notify_fail">Could not switch the network. Check that Shizuku or root is running.</string>
     <string name="work_location_channel">Work location</string>
+    <string name="home_version_line">Version %1$s</string>
 </resources>
