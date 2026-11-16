@@ -41,11 +41,11 @@ public class ShortcutActionActivity extends Activity {
                     });
                 }
 
-                String displayMode = mode.replace("_ONLY", " Only").replace("PREF_", "Pref ");
+                String displayMode = targetMode.getDisplayName();
                 String target = "";
-                if (sim == 1) target = " on SIM 1";
-                else if (sim == 2) target = " on SIM 2";
-                else if (sim == 3) target = " on Both SIMs";
+                if (sim == 1) target = " — " + getString(R.string.sim_1);
+                else if (sim == 2) target = " — " + getString(R.string.sim_2);
+                else if (sim == 3) target = " — " + getString(R.string.sim_both);
 
                 Toast.makeText(getApplicationContext(), getString(R.string.toast_applying) + " " + displayMode + target + "...", Toast.LENGTH_SHORT).show();
             }

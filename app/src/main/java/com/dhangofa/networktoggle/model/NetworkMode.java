@@ -32,8 +32,27 @@ public enum NetworkMode {
     }
 
     public int getStateValue() { return stateValue; }
-    public String getDisplayName() { return displayName; }
-    public String getTileLabel() { return tileLabel; }
+    public String getDisplayName() {
+        return isArabic() ? localizedDisplayName() : displayName;
+    }
+    public String getTileLabel() {
+        return isArabic() ? localizedTileLabel() : tileLabel;
+    }
+    private static boolean isArabic() {
+        return "ar".equals(java.util.Locale.getDefault().getLanguage());
+    }
+    private String localizedDisplayName() {
+        switch (this) {
+            case FOUR_G_ONLY: return "4G فقط";
+            case FIVE_G_ONLY: return "5G فقط";
+            case PREFERRED_5G: return "5G مفضّل";
+            case PREFERRED_4G: return "4G مفضّل";
+            case PREFERRED_3G: return "3G مفضّل";
+            case TWO_G_ONLY: return "2G فقط";
+            default: return "غير معروف";
+        }
+    }
+    private String localizedTileLabel() { return localizedDisplayName(); }
     public String getIconText() { return iconText; }
     public String getBinaryMask() { return binaryMask; }
     public int getLegacyMode() { return legacyMode; }

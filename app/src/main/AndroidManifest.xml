@@ -12,7 +12,7 @@
 
     <application
         android:allowBackup="false"
-        android:label="NetToggle"
+        android:label="@string/app_name"
         android:icon="@drawable/ic_launcher"
         android:roundIcon="@drawable/ic_launcher"
         android:theme="@style/Theme.NetToggle"
@@ -62,7 +62,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="NetToggle"
+            android:label="@string/app_name"
             android:theme="@style/Theme.NetToggle.Splash"
             android:windowSoftInputMode="adjustResize">
 
@@ -75,7 +75,7 @@
 
         <service
             android:name=".NetworkTileService"
-            android:label="NetToggle"
+            android:label="@string/app_name"
             android:icon="@drawable/ic_qs_logo"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
             android:exported="true">
@@ -85,6 +85,19 @@
             </intent-filter>
 
         </service>
+
+        <!-- Private provider: only launcher widget PendingIntents can trigger the toggle. -->
+        <receiver
+            android:name=".NetworkSwitchWidget"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/network_switch_widget_info" />
+        </receiver>
 
     </application>
 

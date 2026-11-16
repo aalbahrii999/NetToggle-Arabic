@@ -310,7 +310,7 @@ public class ShortcutTabHelper {
                 Spinner spinnerMode = row.findViewById(R.id.spinnerMode);
 
                 String rawName = editTitle != null ? editTitle.getText().toString().trim() : "";
-                String shortcutLabel = rawName.isEmpty() ? ("Routine #" + slot) : rawName;
+                String shortcutLabel = rawName.isEmpty() ? activity.getString(R.string.shortcut_default_title, slot) : rawName;
 
                 int simPos = spinnerSim.getSelectedItemPosition();
                 int simValue = (simPos >= 0 && simPos < simValueList.size()) ? simValueList.get(simPos) : 1;
@@ -391,7 +391,7 @@ public class ShortcutTabHelper {
                 }
 
                 if (editTitle != null) {
-                    editTitle.setHint("Routine #" + slotNum);
+                    editTitle.setHint(activity.getString(R.string.shortcut_default_title, slotNum));
                 }
             }
         };
@@ -532,7 +532,7 @@ public class ShortcutTabHelper {
                         }
 
                         String title = editTitle.getText().toString().trim();
-                        if (title.isEmpty()) title = "Routine #" + slot;
+                        if (title.isEmpty()) title = activity.getString(R.string.shortcut_default_title, slot);
 
                         Intent intent = new Intent(activity, ShortcutActionActivity.class);
                         intent.setAction("com.dhangofa.networktoggle.SHORTCUT_ACTION_" + slot);

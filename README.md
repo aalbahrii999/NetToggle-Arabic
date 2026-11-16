@@ -1,5 +1,7 @@
 # NetToggle
 
+> **Arabic fork:** this repository is a localized build. The interface is Arabic when the phone language is Arabic, the launcher name is «مبدّل الشبكة», and a home-screen widget switches preferred 4G/5G on SIM 2. Read [README-AR.md](README-AR.md). Upstream project: [Dhangofa/NetToggle](https://github.com/Dhangofa/NetToggle) (GPL-3.0).
+
 <div align="center">
   <img src="https://raw.githubusercontent.com/Dhangofa/NetToggle/refs/heads/main/fastlane/metadata/android/en-US/images/icon.png" alt="NetToggle Icon" width="128">
   
